@@ -7,36 +7,24 @@
 ####
 
 team_name = 'Dark Side' # Only 10 chars displayed.
-strategy_name = 'Angry Badger'
-strategy_description = 'Detect and beat bots, else backstab if we have been back stabbed'
+strategy_name = 'Honey Badger'
+strategy_description = 'A nicer version of tit for tat, with a first move collude, and "Nice" check.'
     
 def move(my_history, their_history, my_score, their_score):
-    if b not in their_history[3]:
-            return b
+    if 'b' in their_history[-1:]:
+        return 'b'
     else:
-        if my_score > their_score and b not in their_history:
-            return c
+        if my_score >= their_score and 'b' not in their_history:
+            return 'c'
         else:
-            if b in their_history:
-                return b
+            if 'c' in their_history[-1:]:
+                return 'c'
             else:
-                return c
-    
-    
-    
+                return 'b'
+ def test_alternate(their_history):
+    if their_history = lol i dunno
+        
    
-    Returns 'c' or 'b'. 
-    
-
-    # my_history: a string with one letter (c or b) per round that has been played with this opponent.
-    # their_history: a string of the same length as history, possibly empty. 
-    # The first round between these two players is my_history[0] and their_history[0].
-    # The most recent round is my_history[-1] and their_history[-1].
-    
-    # Analyze my_history and their_history and/or my_score and their_score.
-    # Decide whether to return 'c' or 'b'.
-    
-    return 'c'
 
     
 def test_move(my_history, their_history, my_score, their_score, result):
