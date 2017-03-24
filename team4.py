@@ -6,16 +6,23 @@
 #     move: A function that returns 'c' or 'b'
 ####
 
-team_name = 'ibrah69' # Only 10 chars displayed.
+team_name = 'nick' # Only 10 chars displayed.
 strategy_name = 'The name the team gives to this strategy'
 strategy_description = 'How does this strategy decide?'
     
 def move(my_history, their_history, my_score, their_score):
     ''' Arguments accepted: my_history, their_history are strings.
     my_score, their_score are ints.
+  
+    if 'b' == their_history[-5]:
+        return 'b'
+    if 'c' == their_history[-1]:
+        return 'b'
+    else:
+        return 'c'    
     
     Make my move.
-    Returns 'c' or 'b'. 
+
     '''
 
     # my_history: a string with one letter (c or b) per round that has been played with this opponent.
@@ -65,4 +72,7 @@ if __name__ == '__main__':
               # move('bbb', 'ccc', 0, 0) returns 'b'.
               my_score=0, 
               their_score=0,
-              result='b')             
+              result='b')        
+
+
+
