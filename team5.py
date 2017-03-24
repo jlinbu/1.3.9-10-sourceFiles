@@ -9,22 +9,20 @@
 team_name = 'Dark Side' # Only 10 chars displayed.
 strategy_name = 'Honey Badger'
 strategy_description = 'A nicer version of tit for tat, with a first move collude, and "Nice" check.'
-    
 def move(my_history, their_history, my_score, their_score):
-    if 'b' in their_history[-1:]:
-        return 'b'
+    if 'b' in their_history or len(their_history)>98: 
+        return 'b'               
     else:
-        if my_score >= their_score and 'b' not in their_history:
-            return 'c'
+        if 'b' in their_history[-1:]:
+            return 'b'
         else:
-            if 'c' in their_history[-1:]:
+            if my_score >= their_score and 'b' not in their_history:
                 return 'c'
             else:
-                return 'b'
- def test_alternate(their_history):
-    if their_history = lol i dunno
-        
-   
+                if 'c' in their_history[-1:]:
+                    return 'c'
+                else:
+                    return 'b'
 
     
 def test_move(my_history, their_history, my_score, their_score, result):
